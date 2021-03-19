@@ -1,0 +1,74 @@
+body {
+    /* display: flex;
+    justify-content: center; */
+}
+
+h1 {
+    text-align: center;
+}
+
+.circle-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    margin: 0 auto;
+    width: 300px;
+    
+}
+
+.simon-button {
+    
+}
+
+#red-button {
+    background-color: red;
+    border: red;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    font-size: 75px;
+    color: white;
+    
+}
+
+#green-button {
+    background-color: green;
+    border: green;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-size: 75px;
+}
+
+#blue-button {
+    background-color: blue;
+    border: blue;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-size: 75px;
+    
+}
+
+#yellow-button {
+    background-color: yellow;
+    border: yellow;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-size: 75px;
+    
+}
+
+#button-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.hidden {
+    display: none;
+}

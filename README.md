@@ -25,7 +25,7 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 - Create start button
 - Allow player to be able to push start button to iniate game
 - Get computer to flash random circle
-- Get computer to flash random cicle and add one flash to the sequence on every round
+- Get computer to flash random cicle and add one flash to the sequence on every round (predeterminded by an array)
 - Allow player to click circles
 - Keep track of computers sequence
 - Keep track of players sequence
@@ -41,6 +41,7 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 - make final sounds for when player wins or loses
 - add on another player
 - add a timer for how long player has to guess sequence
+ - Computer area purely random with Math.random
 
 
 
