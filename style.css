@@ -73,3 +73,43 @@ h1 {
 .hide {
     display: none;
 }
+
+#btn1 {
+    background-color: red;
+    border: none;
+    font-size: 60px;
+    color: white;
+    margin-top: 35px;
+    margin-left: 50px;
+
+}
+
+#btn2 {
+    background-color: green;
+    border: none;
+    font-size: 60px;
+    color: white;
+    margin-top: 35px;
+    margin-left: 50px;
+
+}
+
+#btn3 {
+    background-color: blue;
+    border: none;
+    font-size: 60px;
+    color: white;
+    margin-top: 35px;
+    margin-left: 50px;
+
+}
+
+#btn4 {
+    background-color: yellow;
+    border: none;
+    font-size: 60px;
+    color: white;
+    margin-top: 35px;
+    margin-left: 50px;
+
+}
