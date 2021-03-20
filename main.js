@@ -2,20 +2,7 @@
 let board;
 let btnId = null
 
-
-document.getElementById('start-button').addEventListener('click', function winSequence() {
-    // console.log('start the game!')
-    for(let i = 0; i < winArrays.length; i++) {
-        let sequence = winArrays[i]
-        for(let num of sequence) {
-          let elem = document.querySelector('#btn' + num)
-          elem.classList.remove('hide')  
-        }
-        
-    }
-    
-});
-
+const playerButtons = document.getElementsByClassName('simon-button');
 
 function getBoardArray () {
     const board = [
@@ -31,6 +18,37 @@ const winArrays = [
     [3, 4, 1],
 ]
 
-btnId = setInterval(winSequence, 1000)
+
+document.getElementById('start-button').addEventListener('click', function winSequence() {
+    
+    document.getElementById('btn3').classList.remove('hide')
+    
+    function addNumber() {
+        document.getElementById('btn3').classList.add('hide')
+    };
+    
+    const computerTimeOut = setInterval(addNumber, 3000)
+   
+    
+    // console.log('start the game!')
+    // for(let i = 0; i < winArrays.length; i++) {
+    //     let sequence = winArrays[i]
+    //     for(let num of sequence) {
+    //       let elem = document.querySelector('#btn' + num)
+    //       elem.classList.remove('hide')
+          
+    //     } 
+
+    // }
+    // btnId = setInterval(winSequence, 3000);
+});
+
+document.getElementById('btn3').addEventListener('click', function playerChoice() {
+    console.log('hello');
+    // document.getElementById('btn3').classList.remove('hide')
+});
 
 
+// playerButtons.getElementsById('blue-button').addEventListener('click', () => {
+//     console.log('the button clicked!')
+// })
