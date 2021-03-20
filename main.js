@@ -3,6 +3,7 @@ let board;
 let btnId = null
 
 const playerButtons = document.getElementsByClassName('simon-button');
+// console.log(playerButtons[0])
 
 function getBoardArray () {
     const board = [
@@ -23,11 +24,13 @@ document.getElementById('start-button').addEventListener('click', function winSe
     
     document.getElementById('btn3').classList.remove('hide')
     
-    function addNumber() {
+    function removeNumber() {
         document.getElementById('btn3').classList.add('hide')
     };
     
-    const computerTimeOut = setInterval(addNumber, 3000)
+    const computerTimeOut = setInterval(removeNumber, 3000)
+
+    //call function to allow player to guess
    
     
     // console.log('start the game!')
@@ -43,12 +46,17 @@ document.getElementById('start-button').addEventListener('click', function winSe
     // btnId = setInterval(winSequence, 3000);
 });
 
-document.getElementById('btn3').addEventListener('click', function playerChoice() {
-    console.log('hello');
-    // document.getElementById('btn3').classList.remove('hide')
-});
+let playerGuess = []
 
+function playerChoices() {
+    for(let button of playerButtons) {
+        // console.log(button)
+        button.addEventListener('click', (event) => {
+            const btn = event.target.firstChild.nextSibling
+            btn.classList.remove('hide')
+            
+        })
+    }
 
-// playerButtons.getElementsById('blue-button').addEventListener('click', () => {
-//     console.log('the button clicked!')
-// })
+}
+
