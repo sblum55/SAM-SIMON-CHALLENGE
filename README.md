@@ -6,11 +6,10 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 
 ## Rules
 1. Must press start button to iniate game
-1. Simon will give player a sequence of colors and one additional sequence to each round(ex. round 1 will start with 1 lit circle, round 2 will have 2 circle lit in a sequence)
+1. Simon will give player a random sequence of numbers
 1. The player than needs to repeat that sequence to win that round
 1. Player will continue play as long as they repeat the correct sequence
-1. If player doesn't repeat the correct sequence they lose the game
-1. On the final round the game will do 5 circle flashes in a random order and the player has to match that sequence in order to win the game.
+1. If player doesn't repeat the correct sequence they lose the game and the game starts over
 
 ## User Stories
  - When I load the page, I will see four circle outlined in color in a grid and start button
