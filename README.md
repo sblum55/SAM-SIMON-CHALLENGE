@@ -40,7 +40,8 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 - make final sounds for when player wins or loses
 - add on another player
 - add a timer for how long player has to guess sequence
- - Computer area purely random with Math.random
+- Computer area purely random with Math.random
+- make game add one addtional sequence new rounds (ex: start with 1 push one round one and 2 on round 2) 
 
 
 

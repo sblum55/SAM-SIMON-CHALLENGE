@@ -1,9 +1,11 @@
 // console.log('hello')
 // let btnId = null
+let sequence = null
 
 const board = document.getElementsByClassName('simon-button');
 // console.log(board[0])
 const startGame = document.getElementById('start-button');
+const clearArray = document.getElementById('clear-array');
 
 // function getBoardArray () {
 //     const board = [
@@ -12,32 +14,46 @@ const startGame = document.getElementById('start-button');
 // ];
 // console.log(board.indexOf(1));
 // }
+// const winArrays = []
 
-const winArrays = []
-while (winArrays.length < 4) {
-    let randomArray = Math.random() * (board.length-1);
-    if(winArrays.indexOf(randomArray) === -1)
-    winArrays.push(randomArray);
+startGame.addEventListener('click', () => {
+    // console.log('you can start')
+    
+})
 
-}
-// sequence = board[Math.floor(Math.random() * board.length)]
-console.log(winArrays)
+let addNum = []
 
-// function shuffleBoard(array) {
-//     for (let btnId of board) {
-//         let btnArray = Math.floor(Math.random() * (btnId +1));
-//         let newArray = array[btnId]
-//         array[btnId] = array[btnArray]
-//         array[btnArray] = newArray;
-//     }
-// }
-// console.log(shuffleBoard[3])
+document.querySelector('#clear-array').addEventListener('click', () =>{
+    addNum = []
+    addNum.length = 0
+    console.log(addNum)
+})
 
+document.querySelector('#start-button').addEventListener('click', () => {
+    // addNum = []
+    // addNum.length = 0
+    for (let i = 0; i < 4; i++) {
+        let randArray = Math.floor(1 + (Math.random() * 3))
+        addNum.push(randArray)
+        document.getElementById(`btn${addNum[i]}`).classList.remove('hide')
+    }
+    console.log(addNum)
+})
 
+//below here create new function to setTimeOut and callback addNum
 
-// for(let btnId of winArrays) {
-//     let elem = document.querySelector('#btn' + btnId)
-//     elem.classList.remove('hide')
+let playerGuess = []
+
+// function playerChoices() {
+    for(let button of board) {
+        // console.log(button)
+        button.addEventListener('click', (event) => {
+            const btn = event.target.firstChild.nextSibling
+            btn.classList.remove('hide')
+             let addPlayersClick = playerGuess.push(button)
+        })
+    }
+
 // }
 
 //starting round
@@ -51,34 +67,6 @@ console.log(winArrays)
     
 
 //     //call function to allow player to guess
-   
-    
-//     // console.log('start the game!')
-//     // for(let i = 0; i < winArrays.length; i++) {
-//     //     let sequence = winArrays[i]
-//     //     for(let num of sequence) {
-//     //       let elem = document.querySelector('#btn' + num)
-//     //       elem.classList.remove('hide')
-          
-//     //     } 
 
-//     // }
-//     // btnId = setInterval(winSequence, 3000);
-// });
 
-let playerGuess = []
-
-function playerChoices() {
-    for(let button of board) {
-        // console.log(button)
-        button.addEventListener('click', (event) => {
-            const btn = event.target.firstChild.nextSibling
-            btn.classList.remove('hide')
-             let addPlayersClick = playerGuess.push(button)
-             
-            
-        })
-    }
-
-}
 
