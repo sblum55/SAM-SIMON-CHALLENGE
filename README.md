@@ -5,15 +5,16 @@ Simon is a memory game designed to see if the player can remember the sequence t
 I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says.html
 
 ## Rules
-1. Must press start button to iniate game
+1. Must press "Get Sequence" button to start game
 1. Simon will give player a random sequence of numbers
 1. The player than needs to repeat that sequence to win that round
+1. The player will then hit the "Get sequence" button to get the next round sequence 
 1. Player will continue play as long as they repeat the correct sequence
 1. If player doesn't repeat the correct sequence they lose the game and the game starts over
 
 ## User Stories
  - When I load the page, I will see four circle outlined in color in a grid and start button
- - When I push the start button, the circles will flash in a sequence filling in with color
+ - When I push the "Get sequence" button, the circles will flash in a sequence filling in with color
  - When I click a circle, the circle will highlight with the color
  - When my clicks match the computers sequence, I will get an alert that I've won the round
  - If click the wrong sequence of colors I will get an alert I lost the game and the game will start will start over
