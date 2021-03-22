@@ -8,25 +8,36 @@ const colorBtns = document.querySelectorAll('.allBtns');
 // console.log(colorBtns[0])
 
 let computerChoice = []
+
+//interval set to 0 in order to sequence
 let interval = 0
 
-// Need to have start-button trigger the loop
+// Sequence button triggers below actions
 document.querySelector('#sequence-button').addEventListener('click', () => {
-    let btn = ``  
+    // Created blank strong for computer choice
+    let btn = ``
+    // Creates an array starting at 0 and is no longer than 3
     for (let i = 0; i <= 3; i++) {
+        //math.random pulls a random number 4 times
         let randNum = Math.floor(1 + (Math.random() * 4))
+        //takes random number variable and pushes it to empty array computer choice
         computerChoice.push(randNum)
+        //variable grabs btn'' id and places random number from array
         btn = `btn${computerChoice[i]}`
+        // Calls showSequence function to start interval
         showSequence(btn, interval)
+        // Sets interval to run +1000 every new loop object
         interval += 1000
     } 
     console.log(computerChoice)
 })
 
 function showSequence(btn, interval) {
+    // Below grabs the btn variable and sets it to remove 'hide' class every second
     setTimeout(() => {
         document.getElementById(btn).classList.remove('hide')
     }, interval)
+    // Below follows the loop grabbing the colorBtns variable and adds the hide to the button every .5 second
     setTimeout (() => {
         for (let i = 0; i < colorBtns.length; i++) {
             colorBtns[i].classList.add('hide')
@@ -57,8 +68,11 @@ let playerGuess = []
                     if(btn.classList.contains('hide')) {
                         btn.classList.remove('hide')
                     }
+                    // interval += 500
                     console.log(btn.innerText)
                     playerGuess.push(btn.innerHTML)
+                    showAnswers(colorBtns, interval)
+                    
                 } else {
                     console.log(`It's not time to guess`)
                 }
@@ -66,21 +80,28 @@ let playerGuess = []
             })
         }
         console.log(playerGuess)
-    // gamePlay()
+    gamePlay()
 // }
+
+
+
+function showAnswers(colorBtns) {
+    setTimeout (() => {
+        for (let i = 0; i < colorBtns.length; i++) {
+            colorBtns[i].classList.add('hide')
+        }
+    }, 250)
+}
 
 function gamePlay() {
     if(playerGuess == computerChoice) {
-        return('You won the round! Can you beat the next?');
+        // return('You won the round! Can you beat the next?');
+        let anouncement = document.querySelector('#resultText')
+        anouncement.innerText = 'You won the round! Can you beat the next?'
     }else {
-        return('You lost...game starts over');
+        // return('You lost...game starts over');
+        let anouncement = document.querySelector('#resultText')
+        anouncement.innerText = 'You lost...game over.'
     }
 }
-
-//below here create new function to setTimeOut and callback addNum
-
-// const firstTrigger = setInterval(document.getElementById(`btn${addNum[0]}`), 4000)
-// const secondTrigger = setInterval(document.getElementById(`btn${addNum[1]}`), 3000)
-// const thirdTrigger = setInterval(document.getElementById(`btn${addNum[2]}`), 2000)
-// const fourthTrigger = setInterval(document.getElementById(`btn${addNum[3]}`), 1000)
 
