@@ -8,9 +8,10 @@ const colorBtns = document.querySelectorAll('.allBtns');
 // console.log(colorBtns[0])
 
 let computerChoice = []
-
-//interval set to 0 in order to sequence
+let playerGuess = []
 let interval = 0
+let playerScore = 0
+
 
 // Sequence button triggers below actions
 document.querySelector('#sequence-button').addEventListener('click', () => {
@@ -45,21 +46,13 @@ function showSequence(btn, interval) {
     },interval +500)
 }
 
-let addNum = []
-
 // Need to be able to clear array after computer plays and before player goes
 document.querySelector('#clear-array').addEventListener('click', () =>{
     computerChoice = []
     playerGuess = []
-    // console.log(addNum)
 })
 
-// console.log(addNum)
-
-// Need to have player choices callback to computer choice and compare
-let playerGuess = []
-
-// function playerChoices() {
+// playerChoices = () => {
         for(let button of board) {
             // console.log(button)
             button.addEventListener('click', (event) => {
@@ -68,7 +61,6 @@ let playerGuess = []
                     if(btn.classList.contains('hide')) {
                         btn.classList.remove('hide')
                     }
-                    // interval += 500
                     console.log(btn.innerText)
                     playerGuess.push(btn.innerHTML)
                     showAnswers(colorBtns, interval)
@@ -80,10 +72,8 @@ let playerGuess = []
             })
         }
         console.log(playerGuess)
-    gamePlay()
+        gamePlay()
 // }
-
-
 
 function showAnswers(colorBtns) {
     setTimeout (() => {
@@ -98,6 +88,7 @@ function gamePlay() {
         // return('You won the round! Can you beat the next?');
         let anouncement = document.querySelector('#resultText')
         anouncement.innerText = 'You won the round! Can you beat the next?'
+        playerScore++;
     }else {
         // return('You lost...game starts over');
         let anouncement = document.querySelector('#resultText')

@@ -1,8 +1,7 @@
 # SIMON CHALLENGE
 
 ## Overview
-Simon is a memory game designed to see if the player can remember the sequence that the computer gives the player.
-I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says.html
+Sam Says is a memory game designed to see if the player can remember the sequence that the computer gives the player.
 
 ## Rules
 1. Must press "Get Sequence" button to start game
@@ -11,6 +10,7 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 1. The player will then hit the "Get sequence" button to get the next round sequence 
 1. Player will continue play as long as they repeat the correct sequence
 1. If player doesn't repeat the correct sequence they lose the game and the game starts over
+1. If the player gets to 100 points, 10 rounds, they win the game!
 
 ## User Stories
  - When I load the page, I will see four circle outlined in color in a grid and start button
@@ -31,19 +31,17 @@ I'm going to build a game like this: https://www.mathsisfun.com/games/simon-says
 - Keep track of players sequence
 - Check to make sure players sequence matched computers sequence
 - Alert player that they have correct sequence or incorrect sequence
+- Keep track of players score - this will allow to know when they won the game
 - Game restart when player loses
 
 ## Stretch Goals
-- Make the circle look more like the original game (one big circle with start button in middele and color sections surrounding it)
+- Add additional styling to give game more character
 - add more sequence rounds (10 or 15 rounds)
 - keep track of how many wins the player has
 - add a sound for each circle so when the sequence goes off each circle has its own sound (this will also work when player hits that circle)
 - make final sounds for when player wins or loses
 - add on another player
 - add a timer for how long player has to guess sequence
-- Computer area purely random with Math.random
-- make game add one addtional sequence new rounds (ex: start with 1 push one round one and 2 on round 2) 
-
 
 
 
