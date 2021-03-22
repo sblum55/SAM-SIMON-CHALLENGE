@@ -3,7 +3,6 @@
 const board = document.getElementsByClassName('simon-button');
 // console.log(board[0])
 const startGame = document.getElementById('start-button');
-const clearArray = document.getElementById('clear-array');
 const colorBtns = document.querySelectorAll('.allBtns');
 // console.log(colorBtns[0])
 
@@ -11,6 +10,7 @@ let computerChoice = []
 let playerGuess = []
 let interval = 0
 let playerScore = 0
+let playerChoices;
 
 
 document.querySelector('#sequence-button').addEventListener('click', () => {
@@ -27,11 +27,9 @@ document.querySelector('#sequence-button').addEventListener('click', () => {
 })
 
 function showSequence(btn, interval) {
-    // Below grabs the btn variable and sets it to remove 'hide' class every second
     setTimeout(() => {
         document.getElementById(btn).classList.remove('hide')
     }, interval)
-    // Below follows the loop grabbing the colorBtns variable and adds the hide to the button every .5 second
     setTimeout (() => {
         for (let i = 0; i < colorBtns.length; i++) {
             colorBtns[i].classList.add('hide')
@@ -39,34 +37,51 @@ function showSequence(btn, interval) {
     },interval +500)
 }
 
-// Need to be able to clear array after computer plays and before player goes
-// document.querySelector('#clear-array').addEventListener('click', () =>{
-    computerChoice = []
-    playerGuess = []
-// })
-
 // playerChoices = () => {
         for(let button of board) {
             // console.log(button)
             button.addEventListener('click', (event) => {
-                if(playerGuess.length <= 4 && computerChoice.length === 4) {
+                if(playerGuess.length < 4 && computerChoice.length === 4) {
                     const btn = event.target.firstChild.nextSibling
                     if(btn.classList.contains('hide')) {
                         btn.classList.remove('hide')
                     }
                     console.log(btn.innerText)
-                    playerGuess.push(btn.innerHTML)
+                    let btnContent = parseInt(btn.innerText)
+                    playerGuess.push(btnContent)
                     showAnswers(colorBtns, interval)
                     
-                } else {
+                }else if (playerGuess.length === 4 && computerChoice.length === 4) {
+                    const btn = event.target.firstChild.nextSibling
+                    if(btn.classList.contains('hide')) {
+                        btn.classList.remove('hide')
+                    }
+                    console.log(btn.innerText)
+                    let btnContent = parseInt(btn.innerText)
+                    playerGuess.push(btnContent)
+                    for(let j = 0; j < playerGuess.length; j++){
+                        console.log('you made it here')
+                        if(playerGuess[j] !== computerChoice[j]) {
+                            let anouncement = document.querySelector('#resultText')
+                            anouncement.innerText = 'You lost...game over.'
+                        }else {
+                            console.log('you made it here')
+                            let anouncement = document.querySelector('#resultText')
+                            anouncement.innerText = 'You won the round! Can you beat the next?'
+                        }
+                    }
                     console.log(`It's not time to guess`)
                 }
-                
             })
+            
         }
-        console.log(playerGuess)
-        gamePlay()
-// }
+    console.log(playerGuess) 
+
+// };
+
+function gamePlay() {
+    
+}
 
 function showAnswers(colorBtns) {
     setTimeout (() => {
@@ -76,16 +91,15 @@ function showAnswers(colorBtns) {
     }, 250)
 }
 
-function gamePlay() {
-    if(playerGuess == computerChoice) {
-        // return('You won the round! Can you beat the next?');
-        let anouncement = document.querySelector('#resultText')
-        anouncement.innerText = 'You won the round! Can you beat the next?'
-        playerScore++;
-    }else {
-        // return('You lost...game starts over');
-        let anouncement = document.querySelector('#resultText')
-        anouncement.innerText = 'You lost...game over.'
-    }
-}
-
+// function gamePlay() {
+//     if(playerGuess == computerChoice) {
+//         // return('You won the round! Can you beat the next?');
+//         let anouncement = document.querySelector('#resultText')
+//         anouncement.innerText = 'You won the round! Can you beat the next?'
+//         playerScore++;
+//     }else {
+//         // return('You lost...game starts over');
+//         let anouncement = document.querySelector('#resultText')
+//         anouncement.innerText = 'You lost...game over.'
+//     }
+// }
