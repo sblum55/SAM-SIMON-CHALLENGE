@@ -13,22 +13,15 @@ let interval = 0
 let playerScore = 0
 
 
-// Sequence button triggers below actions
 document.querySelector('#sequence-button').addEventListener('click', () => {
-    // Created blank strong for computer choice
     let btn = ``
-    // Creates an array starting at 0 and is no longer than 3
+    computerChoice.length = 0
     for (let i = 0; i <= 3; i++) {
-        //math.random pulls a random number 4 times
         let randNum = Math.floor(1 + (Math.random() * 4))
-        //takes random number variable and pushes it to empty array computer choice
         computerChoice.push(randNum)
-        //variable grabs btn'' id and places random number from array
         btn = `btn${computerChoice[i]}`
-        // Calls showSequence function to start interval
         showSequence(btn, interval)
-        // Sets interval to run +1000 every new loop object
-        interval += 1000
+        interval += 750
     } 
     console.log(computerChoice)
 })
@@ -47,10 +40,10 @@ function showSequence(btn, interval) {
 }
 
 // Need to be able to clear array after computer plays and before player goes
-document.querySelector('#clear-array').addEventListener('click', () =>{
+// document.querySelector('#clear-array').addEventListener('click', () =>{
     computerChoice = []
     playerGuess = []
-})
+// })
 
 // playerChoices = () => {
         for(let button of board) {
