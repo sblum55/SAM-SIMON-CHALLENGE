@@ -1,20 +1,22 @@
+/* Background from <a href='https://www.freepik.com/vectors/background'>Background vector created by Creative_hat - www.freepik.com</a> */
+
 body {
-    background-color: #4b0cb1;
+    background-color: #54428e;
+    background-image: url(./purple-background.jpg);
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
-    text-shadow: 
-        -2px -2px 0 #000,
-		    2px -2px 0 #000,
-		   -2px 2px 0 #000,
-		    2px 2px 0 #000;
     letter-spacing: 1.5px;
     
 }
 
-p {
-  font-size: 25px;
+.rules {
+  font-size: 20px;
   letter-spacing: 2px;
   color: white;
+  text-shadow: 0 0.1em 20px rgba(0, 0, 0, 1), 0.05em -0.03em 0 rgba(0, 0, 0, 1),
+  0.05em 0.005em 0 rgba(0, 0, 0, 1), 0em 0.08em 0 rgba(0, 0, 0, 1),
+  0.05em 0.08em 0 rgba(0, 0, 0, 1), 0px -0.03em 0 rgba(0, 0, 0, 1),
+  -0.03em -0.03em 0 rgba(0, 0, 0, 1), -0.03em 0.08em 0 rgba(0, 0, 0, 1), -0.03em 0 0 rgba(0, 0, 0, 1);
 }
 
 h1 {
@@ -32,13 +34,19 @@ h1 {
 
 .game-rules {
     display: grid;
+    margin-bottom: 30px;
     margin-right: 50px;
     margin-left: 50px;
+    background-color: #0a2e36;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     padding-top: 15px;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
 }
 
 #player-score {
@@ -46,6 +54,10 @@ h1 {
     text-align: center;
     padding-bottom: 15px;
     font-size: 50px;
+    text-shadow: 0 0.1em 20px rgba(0, 0, 0, 1), 0.05em -0.03em 0 rgba(0, 0, 0, 1),
+    0.05em 0.005em 0 rgba(0, 0, 0, 1), 0em 0.08em 0 rgba(0, 0, 0, 1),
+    0.05em 0.08em 0 rgba(0, 0, 0, 1), 0px -0.03em 0 rgba(0, 0, 0, 1),
+    -0.03em -0.03em 0 rgba(0, 0, 0, 1), -0.03em 0.08em 0 rgba(0, 0, 0, 1), -0.03em 0 0 rgba(0, 0, 0, 1);
 }
 
 .text-area {
@@ -62,107 +74,10 @@ h1 {
   color: white;
 }
 
-.circle-container {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    grid-template-rows: repeat(2, 150px);
-    gap: 15px 15px;
-    margin: 0 auto;
-    width: 330px;
-    
-}
-
-.simon-button {
-    border: 2px solid black;
-    border-radius: 50%;
-}
-
-#red-button {
-    background-color: #D14B3D;
-    border: 5px solid white;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    font-size: 75px;
-    color: white;
-    
-}
-
-#green-button {
-    background-color: #5ACB3C;
-    border: 5px solid white;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    color: white;
-    font-size: 75px;
-}
-
-#blue-button {
-    background-color: #44A3F7;
-    border: 5px solid white;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    color: white;
-    font-size: 75px;
-    
-}
-
-#yellow-button {
-    background-color: #DEBF40;
-    border: 5px solid white;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    color: white;
-    font-size: 75px;
-    
-}
-
 #button-area {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.hide {
-    display: none;
-}
-
-#btn1 {
-    background-color: #D14B3D;
-    border: none;
-    font-size: 60px;
-    color: white;
-    margin-top: 35px;
-
-}
-
-#btn2 {
-    background-color: #5ACB3C;
-    border: none;
-    font-size: 60px;
-    color: white;
-    margin-top: 35px;
-
-}
-
-#btn3 {
-    background-color: #44A3F7;
-    border: none;
-    font-size: 60px;
-    color: white;
-    margin-top: 35px;
-
-}
-
-#btn4 {
-    background-color: #DEBF40;
-    border: none;
-    font-size: 60px;
-    color: white;
-    margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 #sequence-button {
@@ -173,7 +88,7 @@ h1 {
   font-family: 'Luckiest Guy', cursive;
   font-size: 20px;
   color: white;
-  background-color: #4b0cb1;
+  background-color: #54428e;
   border: 3px solid white;
   border-radius: 5px;
   width: 200px;
@@ -193,7 +108,7 @@ h1 {
   font-family: 'Luckiest Guy', cursive;
   font-size: 20px;
   color: white;
-  background-color: #4b0cb1;
+  background-color: #54428e;
   border: 3px solid white;
   border-radius: 5px;
   width: 100px;
@@ -214,6 +129,119 @@ h1 {
   background-color: white;
   border: 3px white;
 }
+
+#reset-button:active {
+  outline: none;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  color: #4b0cb1;
+  background-color: white;
+  border: 3px white;
+}
+
+.circle-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 185px);
+    grid-template-rows: repeat(2, 185px);
+    gap: 20px 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 330px;
+    
+}
+
+.simon-button {
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+#red-button {
+    background-color: #ff3c38;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    font-size: 75px;
+    color: white;
+    
+}
+
+#green-button {
+    background-color: #95c623;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    color: white;
+    font-size: 75px;
+}
+
+#blue-button {
+    background-color: #258ea6;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    color: white;
+    font-size: 75px;
+    
+}
+
+#yellow-button {
+    background-color: #f5d547;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    color: white;
+    font-size: 75px;
+    
+}
+
+.hide {
+    display: none;
+}
+
+#btn1 {
+    background: transparent;
+    border: none;
+    font-size: 95px;
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    margin-top: 60px;
+}
+
+#btn2 {
+    background: transparent;
+    border: none;
+    font-size: 95px;
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    margin-top: 60px;
+
+}
+
+#btn3 {
+    background: transparent;
+    border: none;
+    font-size: 95px;
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    margin-top: 60px;
+
+}
+
+#btn4 {
+    background: transparent;
+    border: none;
+    font-size: 95px;
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    margin-top: 60px;
+}
+
+
 @media screen and (min-width: 800px) {
   .container {
     margin: 1em 2em;
