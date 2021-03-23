@@ -25,14 +25,13 @@ Sam Says is a memory game designed to see if the player can remember the sequenc
 - Create start button
 - Allow player to be able to push start button to iniate game
 - Get computer to flash random circle
-- Get computer to flash random cicle and add one flash to the sequence on every round (predeterminded by an array)
+- Get computer to flash random cicle and add one flash to the sequence on every round
 - Allow player to click circles
 - Keep track of computers sequence
 - Keep track of players sequence
 - Check to make sure players sequence matched computers sequence
 - Alert player that they have correct sequence or incorrect sequence
 - Keep track of players score - this will allow to know when they won the game
-- Game restart when player loses
 
 ## Stretch Goals
 - Add additional styling to give game more character
