@@ -70,8 +70,8 @@ h1 {
 .circle-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(2, 300px);
     gap: 20px 20px;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -88,8 +88,8 @@ h1 {
     background-color: #D14B3D;
     border: 5px solid white;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     font-size: 75px;
     color: white;
     
@@ -99,8 +99,8 @@ h1 {
     background-color: #5ACB3C;
     border: 5px solid white;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     color: white;
     font-size: 75px;
 }
@@ -109,7 +109,7 @@ h1 {
     background-color: #44A3F7;
     border: 5px solid white;
     border-radius: 50%;
-    width: 200px;
+    width: 300px;
     height: 200px;
     color: white;
     font-size: 75px;
@@ -120,8 +120,8 @@ h1 {
     background-color: #DEBF40;
     border: 5px solid white;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     color: white;
     font-size: 75px;
     
@@ -138,12 +138,12 @@ h1 {
 }
 
 #btn1 {
-    background-color: #D14B3D;
+    background: transparent;
     border: none;
     font-size: 85px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     text-shadow: 
         -2px -2px 0 #000,
 		    2px -2px 0 #000,
@@ -153,12 +153,12 @@ h1 {
 }
 
 #btn2 {
-    background-color: #5ACB3C;
+    background: transparent;
     border: none;
     font-size: 85px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     text-shadow: 
         -2px -2px 0 #000,
 		    2px -2px 0 #000,
@@ -168,12 +168,12 @@ h1 {
 }
 
 #btn3 {
-    background-color: #44A3F7;
+    background: transparent;
     border: none;
     font-size: 85px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     text-shadow: 
         -2px -2px 0 #000,
 		    2px -2px 0 #000,
@@ -183,12 +183,12 @@ h1 {
 }
 
 #btn4 {
-    background-color: #DEBF40;
+    background: transparent;
     border: none;
     font-size: 85px;
     font-family: 'Luckiest Guy', cursive;
     color: white;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     text-shadow: 
         -2px -2px 0 #000,
 		    2px -2px 0 #000,
