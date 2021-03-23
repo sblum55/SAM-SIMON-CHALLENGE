@@ -8,25 +8,32 @@ const colorBtns = document.querySelectorAll('.allBtns');
 
 let computerChoice = []
 let playerGuess = []
-let interval = 0
+let interval = 1000
 let playerScore = 0
 let playerChoices;
 
+document.querySelector('#sequence-button').addEventListener('click',() => {
+    computerTurn();
+    playerGuess.length = 0
+    interval = 1000
+})
+
+
+
 //Create function round Start
 function computerTurn () {
-    document.querySelector('#sequence-button').addEventListener('click', () => {
         let btn = ``
         computerChoice.length = 0
         for (let i = 0; i <= 3; i++) {
-            console.log('line 19 ran')
+            // console.log('line 19 ran')
             let randNum = Math.floor(1 + (Math.random() * 4))
             computerChoice.push(randNum)
             btn = `btn${computerChoice[i]}`
             showSequence(btn, interval)
-            interval += 750
+            interval += 1250
         } 
         console.log(computerChoice)
-    })
+    }
     
     function showSequence(btn, interval) {
         setTimeout(() => {
@@ -39,12 +46,12 @@ function computerTurn () {
             }
         },interval +500)
     }
-}
+// }
 
 
 let compareAnswers = () => {
         let isMatch = false
-        console.log(isMatch)
+        // console.log(isMatch)
         console.log(playerGuess.length === computerChoice.length)
         let anouncement = document.querySelector('#resultText')
         if(playerGuess.length === computerChoice.length) {
@@ -56,31 +63,30 @@ let compareAnswers = () => {
             if (playerGuess[j] === computerChoice[j]) {
                 isMatch = true
             } else {
-                return anouncement.innerText = 'You lost...game over.'
+                return anouncement.innerText = 'You lost...try again.'
             }
         
         }
         console.log(isMatch)
         if(isMatch === true ) {
-            
-                    anouncement.innerText = 'You won the round! Can you beat the next?'
-                    console.log('win')
-                    playerScore += 10
-                }
-                if(isMatch === false) {
-                    console.log('you made it here2')
-                    let anouncement = document.querySelector('#resultText')
-                    
-                    console.log('lost')
+                anouncement.innerText = 'You won the round! Can you beat the next?'
+                // console.log('win')
+                playerScore += 10;
+                document.querySelector('#player-score').innerHTML = playerScore
+            }
+        if(isMatch === false) {
+            console.log('you made it here2')
+            let anouncement = document.querySelector('#resultText')
+                    // console.log('lost')
                 }
         }        
 }
 
 playerChoices = () => {
         for(let i = 0; i < board.length; i++) {
-            console.log('line 43 ran')
+            // console.log('line 43 ran')
             board[i].addEventListener('click', (event) => {
-                if(playerGuess.length < 4) {
+                if(playerGuess.length < 4 && computerChoice.length === 4) {
                     const btn = event.target.firstChild.nextSibling
                     if(btn.classList.contains('hide')) {
                         btn.classList.remove('hide')
@@ -96,11 +102,9 @@ playerChoices = () => {
             })
             
         }
-    
 };
 
 playerChoices();
-
 
 function showAnswers(colorBtns) {
     setTimeout (() => {
@@ -110,28 +114,9 @@ function showAnswers(colorBtns) {
     }, 250)
 }
 
-document.querySelector('#player-score').innerText = playerScore
-
 function playerWin() {
     if(playerScore === 100)
     alert('You won!!')
 }
 
-// function gamePlay() {
-    
-// }
-
-
-
-// function gamePlay() {
-//     if(playerGuess == computerChoice) {
-//         // return('You won the round! Can you beat the next?');
-//         let anouncement = document.querySelector('#resultText')
-//         anouncement.innerText = 'You won the round! Can you beat the next?'
-//         playerScore++;
-//     }else {
-//         // return('You lost...game starts over');
-//         let anouncement = document.querySelector('#resultText')
-//         anouncement.innerText = 'You lost...game over.'
-//     }
-// }
+playerWin();
