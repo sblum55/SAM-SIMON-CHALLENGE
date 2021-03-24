@@ -17,7 +17,9 @@ Sam Says is a memory game designed to see if the player can remember the sequenc
  - When I push the "Get sequence" button, the circles will flash in a sequence filling in with color
  - When I click a circle, the circle will highlight with the color
  - When my clicks match the computers sequence, I will get an alert that I've won the round
- - If click the wrong sequence of colors I will get an alert I lost the game and the game will start will start over
+ - If click the wrong sequence of colors I will get an alert I lost the round.
+ - If I reach 100 points, I win the whole game.
+ - After I win I can click the "RESET" button and start over.
 
 
 ## MVP Checklist
